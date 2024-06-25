@@ -1,12 +1,15 @@
 arr = [4, 2, 5, 8, 7]
 
 for i in range(1, len(arr)):
-    curVariable = arr[i]
-    sortedArrayLastIndex = i - 1
+    sortElement = arr[i]
+    rightPointer = i - 1
 
-    while sortedArrayLastIndex >=0 and curVariable< arr[sortedArrayLastIndex]:
-        arr[sortedArrayLastIndex +1] = arr[sortedArrayLastIndex]
-        sortedArrayLastIndex-=1
+    while rightPointer >= 0 and arr[rightPointer] > sortElement:
+        arr[rightPointer + 1] = arr[rightPointer]
+        rightPointer -= 1
 
-    arr[sortedArrayLastIndex+1] = curVariable
+    arr[rightPointer + 1] = sortElement
+
 print(arr)
+
+
