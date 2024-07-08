@@ -22,3 +22,5 @@ if "apple" in hashmap:
 if "banana" not in hashmap:
     print("Banana does not exist in the hashmap")
 
+#hiiiiiiiii
+
