@@ -1,5 +1,6 @@
 # Creating a dictionary
 student = {
+    # Key : Value
     "name": "Alice",
     "age": 23,
     "major": "Computer Science"
@@ -9,9 +10,11 @@ student = {
 print(student["name"])  # Output: Alice
 print(student["age"])   # Output: 23
 
+
+
 # Modifying items
 student["age"] = 24
-print(student["age"])  # Output: 24
+print("age is",student["age"])  # Output: 24
 
 # Adding items
 student["GPA"] = 3.8
@@ -21,10 +24,6 @@ print(student)
 del student["major"]
 print(student)
 
-# Removing items using pop()
-gpa = student.pop("GPA")
-print(gpa)  # Output: 3.8
-print(student)
 
 # Iterating through keys
 for key in student:

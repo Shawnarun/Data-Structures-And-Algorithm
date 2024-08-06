@@ -1,6 +1,6 @@
 def MergeSort(array):
     #split array
-    if 1<len(array):
+    if 1 < len(array):
         mid = len(array) // 2
         leftArray = array[:mid]
         rightArray = array[mid:]
@@ -12,7 +12,7 @@ def MergeSort(array):
         rp = 0
         fp = 0
 
-        while (lp < len(leftArray) and rp < len(rightArray)):
+        while lp < len(leftArray) and rp < len(rightArray):
             if leftArray[lp] < rightArray[rp]:
                 array[fp] = leftArray[lp]
                 lp += 1
@@ -21,16 +21,15 @@ def MergeSort(array):
                 rp += 1
             fp += 1
 
-        while lp<len(leftArray):
-            array[fp]=leftArray[lp]
-            lp+=1
-            fp+=1
+        while lp < len(leftArray):
+            array[fp] = leftArray[lp]
+            lp += 1
+            fp += 1
 
-        while rp<len(rightArray):
+        while rp < len(rightArray):
             array[fp] = rightArray[rp]
             rp += 1
             fp += 1
-
 
     return array
 
