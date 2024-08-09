@@ -1,28 +1,25 @@
-# Stack using list
 
-stack = [1, 4, 5, 6]
+stack =[]
 
-print(stack[-1])  # Accessing
+# 5 , "Boyj"
+#Push
 
-stack.append(68)  # insertion
+stack.append(5)
+stack.append("Boyj")
+stack.append(9.0)
+
+print(stack)
+
+#Pop
+stack.pop()
+print(stack)
+
+#Check Top element
 print(stack[-1])
 
-stack.pop()  # Deletion
-print(stack[-1])
 
+#isEmpty
+print(len(stack) == 0)
 
-
-# Stack using deque
-from collections import deque
-
-stack = deque([1, 2, 4, 5, 6])
-print(stack[-1])
-
-
-from queue import Queue
-
-q =Queue()
-q.put(5)
-a=q.get()
-print(a)
-print(q.empty())
+#Size
+print(len(stack))
