@@ -1,38 +1,51 @@
-def MergeSort(array):
-    #split array
-    if 1 < len(array):
-        mid = len(array) // 2
-        leftArray = array[:mid]
-        rightArray = array[mid:]
+def MergeSort(arr):
 
-        MergeSort(leftArray)
-        MergeSort(rightArray)
+  if 1 < len(arr):
+    #Split array
+    #[2,4,8] [6,9,10]
+    mid= len(arr)//2
+    leftArray = arr[:mid]
+    rightArray = arr[mid:]
 
-        lp = 0
-        rp = 0
-        fp = 0
+    # la =[2,4,8] ra=[6,9,10]
+    # la [2 ,4] ra [8]   la [6 ,9] ra [10]
+    #la [2 ] ra [4] ra [8]  la [6] ra [9] [10]
 
-        while lp < len(leftArray) and rp < len(rightArray):
-            if leftArray[lp] < rightArray[rp]:
-                array[fp] = leftArray[lp]
-                lp += 1
-            else:
-                array[fp] = rightArray[rp]
-                rp += 1
-            fp += 1
+    MergeSort(leftArray)
+    MergeSort(rightArray)
 
-        while lp < len(leftArray):
-            array[fp] = leftArray[lp]
-            lp += 1
-            fp += 1
+    lp=0
+    rp=0
+    fp=0
 
-        while rp < len(rightArray):
-            array[fp] = rightArray[rp]
+    while lp < len(leftArray) and rp < len(rightArray):
+        if leftArray[lp] < rightArray[rp]:
+            arr[fp]=leftArray[lp]
+            lp+=1
+        else:
+            arr[fp] = rightArray[rp]
             rp += 1
-            fp += 1
 
-    return array
+        fp += 1
+
+    while lp < len(leftArray):
+        arr[fp]=leftArray[lp]
+        lp+=1
+        fp+=1
+
+    while rp < len(rightArray):
+        arr[fp] = rightArray[rp]
+        rp += 1
+        fp += 1
+
+    return arr
 
 
-arr = [4, 2, 5, 8, 7]
+arr = [4, 2, 5, 8, 7 , 58 , 96 , 1 , 1 ,45]
 print(MergeSort(arr))
+
+
+
+
+
+
