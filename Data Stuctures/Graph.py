@@ -44,6 +44,29 @@ class Graph:
     def isEdge(self,v1,v2):
         return v1 in self.graph[v2] or v2 in self.graph[v1]
 
+    def DFS_Traversal(self,start,Visited=set()):
+        if start not in Visited:
+            Visited.add(start)
+            print(start,end="")
+
+            for child in self.graph[start]:
+                self.DFS_Traversal(child,Visited)
+
+
+    def BFS_Traversal(self,start):
+        AlreadyVisited ={start}
+        Queue = [start]
+
+        while len(Queue) > 0:
+            current = Queue.pop(0)
+            print(current,end=" ")
+            for child in self.graph[current]:
+                if child not in AlreadyVisited:
+                    Queue.append(child)
+                    AlreadyVisited.add(child)
+
+
+
 
 graph = Graph()
 graph.AddEdge("x","y")
@@ -52,8 +75,5 @@ graph.AddEdge("z","w")
 graph.AddEdge("x","w")
 
 
-graph.getEdges()
-print()
-print()
-graph.removeEdge("x","w")
-graph.getEdges()
+graph.Display()
+graph.BFS_Traversal("z")
